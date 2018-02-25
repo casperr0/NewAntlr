@@ -89,10 +89,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)antlr4-runtime;$(SolutionDir)antlr4-runtime\atn;$(SolutionDir)antlr4-runtime\dfa;$(SolutionDir)antlr4-runtime\misc;$(SolutionDir)antlr4-runtime\support;$(SolutionDir)antlr4-runtime\tree;$(SolutionDir)antlr4-runtime\tree\pattern;$(SolutionDir)antlr4-runtime\tree\xpath;$(SolutionDir)generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>antlr4-runtime.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -103,10 +105,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)antlr4-runtime;$(SolutionDir)antlr4-runtime\atn;$(SolutionDir)antlr4-runtime\dfa;$(SolutionDir)antlr4-runtime\misc;$(SolutionDir)antlr4-runtime\support;$(SolutionDir)antlr4-runtime\tree;$(SolutionDir)antlr4-runtime\tree\pattern;$(SolutionDir)antlr4-runtime\tree\xpath;$(SolutionDir)generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>antlr4-runtime.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -119,12 +123,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)antlr4-runtime;$(SolutionDir)antlr4-runtime\atn;$(SolutionDir)antlr4-runtime\dfa;$(SolutionDir)antlr4-runtime\misc;$(SolutionDir)antlr4-runtime\support;$(SolutionDir)antlr4-runtime\tree;$(SolutionDir)antlr4-runtime\tree\pattern;$(SolutionDir)antlr4-runtime\tree\xpath;$(SolutionDir)generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>antlr4-runtime.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,15 +143,35 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)antlr4-runtime;$(SolutionDir)antlr4-runtime\atn;$(SolutionDir)antlr4-runtime\dfa;$(SolutionDir)antlr4-runtime\misc;$(SolutionDir)antlr4-runtime\support;$(SolutionDir)antlr4-runtime\tree;$(SolutionDir)antlr4-runtime\tree\pattern;$(SolutionDir)antlr4-runtime\tree\xpath;$(SolutionDir)generated;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\vs-2015\x64\Release DLL</AdditionalLibraryDirectories>
+      <AdditionalDependencies>antlr4-runtime.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\generated\ExprBaseListener.h" />
+    <ClInclude Include="..\generated\ExprBaseVisitor.h" />
+    <ClInclude Include="..\generated\ExprCalcVisitor.h" />
+    <ClInclude Include="..\generated\ExprLexer.h" />
+    <ClInclude Include="..\generated\ExprListener.h" />
+    <ClInclude Include="..\generated\ExprParser.h" />
+    <ClInclude Include="..\generated\ExprVisitor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\generated\ExprBaseListener.cpp" />
+    <ClCompile Include="..\generated\ExprBaseVisitor.cpp" />
+    <ClCompile Include="..\generated\ExprCalcVisitor.cpp" />
+    <ClCompile Include="..\generated\ExprLexer.cpp" />
+    <ClCompile Include="..\generated\ExprListener.cpp" />
+    <ClCompile Include="..\generated\ExprParser.cpp" />
+    <ClCompile Include="..\generated\ExprVisitor.cpp" />
+    <ClCompile Include="myantlrproj4.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
